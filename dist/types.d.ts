@@ -1,13 +1,49 @@
-export interface USBDevice {
-    vendorId: number;
-    productId: number;
-    deviceAddress: number;
-    manufacturer?: string;
-    product?: string;
-    serialNumber?: string;
-}
 export interface DeviceChangeEvent {
     type: 'attach' | 'detach';
     device: USBDevice;
 }
 export type DeviceChangeCallback = (event: DeviceChangeEvent) => void;
+export type USBDevice = {
+    [K in DeviceProperties]: string;
+};
+export declare enum DeviceProperties {
+    DEVPATH = "DEVPATH",
+    DEVNAME = "DEVNAME",
+    MAJOR = "MAJOR",
+    MINOR = "MINOR",
+    SUBSYSTEM = "SUBSYSTEM",
+    USEC_INITIALIZED = "USEC_INITIALIZED",
+    ID_BUS = "ID_BUS",
+    ID_MODEL = "ID_MODEL",
+    ID_MODEL_ENC = "ID_MODEL_ENC",
+    ID_MODEL_ID = "ID_MODEL_ID",
+    ID_SERIAL = "ID_SERIAL",
+    ID_SERIAL_SHORT = "ID_SERIAL_SHORT",
+    ID_VENDOR = "ID_VENDOR",
+    ID_VENDOR_ENC = "ID_VENDOR_ENC",
+    ID_VENDOR_ID = "ID_VENDOR_ID",
+    ID_REVISION = "ID_REVISION",
+    ID_TYPE = "ID_TYPE",
+    ID_USB_MODEL = "ID_USB_MODEL",
+    ID_USB_MODEL_ENC = "ID_USB_MODEL_ENC",
+    ID_USB_MODEL_ID = "ID_USB_MODEL_ID",
+    ID_USB_SERIAL = "ID_USB_SERIAL",
+    ID_USB_SERIAL_SHORT = "ID_USB_SERIAL_SHORT",
+    ID_USB_VENDOR = "ID_USB_VENDOR",
+    ID_USB_VENDOR_ENC = "ID_USB_VENDOR_ENC",
+    ID_USB_VENDOR_ID = "ID_USB_VENDOR_ID",
+    ID_USB_REVISION = "ID_USB_REVISION",
+    ID_USB_TYPE = "ID_USB_TYPE",
+    ID_USB_INTERFACES = "ID_USB_INTERFACES",
+    ID_USB_INTERFACE_NUM = "ID_USB_INTERFACE_NUM",
+    ID_USB_DRIVER = "ID_USB_DRIVER",
+    ID_VENDOR_FROM_DATABASE = "ID_VENDOR_FROM_DATABASE",
+    ID_MODEL_FROM_DATABASE = "ID_MODEL_FROM_DATABASE",
+    ID_PATH = "ID_PATH",
+    ID_PATH_TAG = "ID_PATH_TAG",
+    ID_MM_CANDIDATE = "ID_MM_CANDIDATE",
+    SYSTEMD_WANTS = "SYSTEMD_WANTS",
+    DEVLINKS = "DEVLINKS",
+    TAGS = "TAGS",
+    CURRENT_TAGS = "CURRENT_TAGS"
+}

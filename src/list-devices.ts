@@ -4,6 +4,14 @@ import { USBDevice, DeviceProperties } from './types';
 
 const targetFields = new Set(Object.values(DeviceProperties));
 
+function processDevLinks(devLinks: string): string {
+    if (!devLinks) return '';
+    return devLinks
+        .split(' ')
+        .filter(link => !link.startsWith('/dev/serial'))
+        .join(' ');
+}
+
 export function parseUdevadmOutput(output: string): USBDevice | null {
     const lines = output.split('\n');
     const result: Record<string, string> = {};
@@ -19,6 +27,11 @@ export function parseUdevadmOutput(output: string): USBDevice | null {
     }
 
     if (!result.DEVNAME) return null;
+
+    // Process DEVLINKS if it exists
+    if (result.DEVLINKS) {
+        result.DEVLINKS = processDevLinks(result.DEVLINKS);
+    }
 
     return Object.values(DeviceProperties).reduce((acc, key) => ({
         ...acc,

@@ -1,6 +1,6 @@
 {
   "name": "rpi-usb",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A TypeScript library for working with USB devices on Raspberry Pi",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

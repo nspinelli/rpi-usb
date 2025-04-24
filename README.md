@@ -3,7 +3,7 @@
 A TypeScript library for monitoring USB devices on Linux systems, particularly optimized for Raspberry Pi. This package provides robust functionality to list and monitor USB devices using built-in Node.js packages and udev.
 
 | Section | Description |
-|---------|-------------|
+|---------|------------------------------------------------------------------- |
 | [Features](#features) | Key features and capabilities |
 | [Installation](#installation) | Setup and installation instructions |
 | [Usage](#usage) | Detailed usage examples |
