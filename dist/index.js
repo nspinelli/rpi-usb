@@ -10,7 +10,6 @@ class RPiUSB {
     }
     initializeUSB() {
         try {
-            // Check if we're running on a Raspberry Pi
             if (process.platform !== 'linux') {
                 throw new Error('This package is designed to run on Linux/Raspberry Pi only');
             }
