@@ -1,15 +1,3 @@
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    table td:first-child,
-    table th:first-child {
-        width: 25%;
-    }
-</style>
-
 # RPi USB Monitor
 
 A TypeScript library for monitoring USB devices on Linux systems, particularly optimized for Raspberry Pi. This package provides robust functionality to list and monitor USB devices using built-in Node.js packages and udev.
